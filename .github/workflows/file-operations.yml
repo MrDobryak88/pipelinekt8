@@ -1,0 +1,26 @@
+name: File Operations Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  file-operations:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: List files in repository
+      run: ls -la
+      
+    - name: Create new file
+      run: echo "This file was created by CI pipeline" > created_by_ci.txt
+      
+    - name: Show created file
+      run: cat created_by_ci.txt
+      
+    - name: Create directory structure
+      run: |
+        mkdir -p test_dir/subdir
+        echo "Directory created" > test_dir/subdir/test.txt
+        ls -la test_dir/
