@@ -1,0 +1,30 @@
+name: Multi-Job Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Job 1 Step 1
+      run: echo "Job 1, Step 1"
+      
+    - name: Job 1 Step 2
+      run: echo "Job 1, Step 2"
+      
+  job2:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Job 2 Step 1
+      run: echo "Job 2, Step 1"
+      
+    - name: Job 2 Step 2
+      run: echo "Job 2, Step 2"
