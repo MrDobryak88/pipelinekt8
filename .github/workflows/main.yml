@@ -1,1 +1,24 @@
 
+name: Basic CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Step 1 - Echo Hello
+      run: echo "Hello from Step 1"
+      
+    - name: Step 2 - Echo World
+      run: echo "World from Step 2"
+      
+    - name: Step 3 - Echo CI
+      run: echo "CI from Step 3"
+      
+    - name: Step 4 - Echo Pipeline
+      run: echo "Pipeline from Step 4"
